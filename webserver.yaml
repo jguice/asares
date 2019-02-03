@@ -1,0 +1,61 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWS Solution Architect Exercise
+Parameters:
+  AmiParameter:
+    Type: 'AWS::EC2::Image::Id'
+    Default: ami-032509850cf9ee54e
+    Description: AMI id to launch (default is Amazon Linux 2 AMI)
+Resources:
+  WebInstance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId:
+        Ref: AmiParameter
+      InstanceType: t2.micro
+      KeyName: jguice
+      BlockDeviceMappings:
+        - DeviceName: /dev/sdb
+          Ebs:
+            VolumeType: gp2
+            DeleteOnTermination: true
+            VolumeSize: 1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 90c25ac5-e899-438a-9e8b-994fdeb107c1
+  WebEip:
+    Type: 'AWS::EC2::EIP'
+    Properties:
+      InstanceId: !Ref WebInstance
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 55d8e762-b721-4668-997e-f606c56c107a
+Metadata:
+  'AWS::CloudFormation::Designer':
+    90c25ac5-e899-438a-9e8b-994fdeb107c1:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        'y': 90
+      z: 1
+      embeds: []
+    55d8e762-b721-4668-997e-f606c56c107a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        'y': 90
+      z: 1
+      embeds: []
+      isassociatedwith:
+        - 90c25ac5-e899-438a-9e8b-994fdeb107c1
+    d77c7442-eccf-4be2-9530-87d4fc466136:
+      source:
+        id: 55d8e762-b721-4668-997e-f606c56c107a
+        selector: 'g:nth-child(1) g:nth-child(4) g:nth-child(2) circle:nth-child(1)     '
+        port: 'AWS::RefLink-AWS::EC2::Instance-InstanceId'
+      target:
+        id: 90c25ac5-e899-438a-9e8b-994fdeb107c1
+      z: 3
