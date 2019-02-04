@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'opsworks-linux-demo-cookbook-nodejs::default' do
+describe 'webserver::default' do
   # Serverspec examples can be found at
   # http://serverspec.org/resource_types.html
   it 'does something' do
