@@ -7,10 +7,10 @@ execute "yum check-update" do
   action :nothing
 end
 
-package 'nginx' do
+package 'httpd' do
   action :install
 end
 
-service 'nginx' do
+service 'httpd' do
   action [ :enable, :start ]
 end
