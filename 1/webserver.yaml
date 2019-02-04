@@ -13,12 +13,20 @@ Resources:
         Ref: AmiParameter
       InstanceType: t2.micro
       KeyName: jguice
+      "SecurityGroupIds":
+        - !Ref WebSecurityGroup
       BlockDeviceMappings:
         - DeviceName: /dev/sdb
           Ebs:
             VolumeType: gp2
             DeleteOnTermination: true
             VolumeSize: 1
+      UserData: !Base64 |
+          #!/bin/bash
+          sudo mkfs -t xfs /dev/xvdb
+      Tags:
+        - Key: Name
+          Value: Web Server
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 90c25ac5-e899-438a-9e8b-994fdeb107c1
@@ -29,6 +37,22 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 55d8e762-b721-4668-997e-f606c56c107a
+  WebSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: public standalone web server
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6792e666-ab4c-43a3-ae62-b9986e0e9b90
 Metadata:
   'AWS::CloudFormation::Designer':
     90c25ac5-e899-438a-9e8b-994fdeb107c1:
@@ -51,11 +75,12 @@ Metadata:
       embeds: []
       isassociatedwith:
         - 90c25ac5-e899-438a-9e8b-994fdeb107c1
-    d77c7442-eccf-4be2-9530-87d4fc466136:
-      source:
-        id: 55d8e762-b721-4668-997e-f606c56c107a
-        selector: 'g:nth-child(1) g:nth-child(4) g:nth-child(2) circle:nth-child(1)     '
-        port: 'AWS::RefLink-AWS::EC2::Instance-InstanceId'
-      target:
-        id: 90c25ac5-e899-438a-9e8b-994fdeb107c1
-      z: 3
+    6792e666-ab4c-43a3-ae62-b9986e0e9b90:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -50
+        'y': 90
+      z: 0
+      embeds: []
