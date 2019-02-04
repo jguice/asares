@@ -18,7 +18,7 @@ A Chef (solo) cookbook for OpsWorks Stacks that configures an instance to be a w
 
 ### steps
 
-1. Create and launch a stack from the `webserver.yaml` Cloud Formation template.
+1. Create and launch a CloudFormation stack from the `webserver.yaml` Cloud Formation template (e.g. in `us-west-2`)
 
 2. Create an OpsWorks Stacks stack, choosing the just-created instance. Follow the console-provided steps to setup the instance for OpsWorks Stacks.
 
