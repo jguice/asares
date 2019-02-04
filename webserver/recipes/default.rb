@@ -31,3 +31,20 @@ cookbook_file '/var/www/html/index.html' do
   mode '0755'
   action :create
 end
+
+# push state verification images
+cookbook_file '/var/www/html/screen-shot1.png' do
+  source 'screen-shot1.png'
+  owner 'apache'
+  group 'apache'
+  mode '0755'
+  action :create
+end
+cookbook_file '/var/www/html/screen-shot2.png' do
+  source 'screen-shot2.png'
+  owner 'apache'
+  group 'apache'
+  mode '0755'
+  action :create
+end
+
