@@ -14,3 +14,26 @@ end
 service 'httpd' do
   action [ :enable, :start ]
 end
+
+# remove default html dir
+directory "/var/www/html" do
+  recursive true
+  action :delete
+end
+
+# mount our "data volume" as new html dir
+mount '/var/www/html' do
+  device '/dev/xvdb'
+  fstype 'xfs'
+  options 'rw'
+  action [:mount, :enable]
+end
+
+# add custom index page to new mount
+cookbook_file '/var/www/html/index.html' do
+  source 'index.html'
+  owner 'apache'
+  group 'apache'
+  mode '0755'
+  action :create
+end
