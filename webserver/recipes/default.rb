@@ -15,12 +15,6 @@ service 'httpd' do
   action [ :enable, :start ]
 end
 
-# remove default html dir
-directory "/var/www/html" do
-  recursive true
-  action :delete
-end
-
 # mount our "data volume" as new html dir
 mount '/var/www/html' do
   device '/dev/xvdb'
