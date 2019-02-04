@@ -1,0 +1,32 @@
+{
+  "name": "webserver",
+  "description": "AWS Fundamentals - Exercise #1",
+  "long_description": "",
+  "maintainer": "Josh Guice",
+  "maintainer_email": "jguice@gmail.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+    "application_javascript": "~> 1.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.0",
+  "source_url": "",
+  "issues_url": ""
+}
