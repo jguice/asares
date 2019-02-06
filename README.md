@@ -29,3 +29,19 @@ A Chef (solo) cookbook for OpsWorks Stacks that configures an instance to be a w
 4. Create a Web Server layer that runs the recipe `webserver` during the deploy phase.
 
 5. Assign the instance created from the Cloud Formation template to the Web Server layer and watch the magic. 🎩
+
+## Two (2)
+
+### contents
+
+```
+2/AWS Architecture Mind Map.pdf
+```
+Mind map used for initial note-taking, requirements capturing, and brainstorming of design, components, etc.
+
+```
+AWS Customer Proposal.pdf
+```
+Final customer-facing proposal document/deliverable outlining the solution and architecture.
+
+
