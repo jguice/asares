@@ -35,13 +35,18 @@ A Chef (solo) cookbook for OpsWorks Stacks that configures an instance to be a w
 ### contents
 
 ```
-2/AWS Architecture Mind Map.pdf
+2/AWS Architecture Mind Map.(itmz|pdf)
 ```
-Mind map used for initial note-taking, requirements capturing, and brainstorming of design, components, etc.
+Mind map used for initial note-taking, requirements capturing, and brainstorming of design, components, etc. (original and PDF).
 
 ```
-AWS Customer Proposal.pdf
+2/AWS Customer Proposal.(pages|pdf)
 ```
-Final customer-facing proposal document/deliverable outlining the solution and architecture.
+Final customer-facing proposal document/deliverable outlining the solution and architecture (original and PDF).
+
+```
+2/AWS Customer Proposal - Estimate.png
+```
+Rough cost estimate for proposed architecture.
 
 
